@@ -1,12 +1,46 @@
-# React + Vite
+# MagicLinkAuthUI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface front-end em React para o projeto Magic Link Authentication, que permite autenticação via link mágico enviado por email.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Visão Geral
 
-## Expanding the ESLint configuration
+Este projeto implementa a interface do usuário para o sistema de autenticação baseado em magic links. O usuário insere seu email, recebe um link de login temporário no email e ao clicar, é autenticado automaticamente.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A API backend é responsável por gerar tokens temporários, enviar o email e validar o token retornando um JWT.
+
+---
+
+## Tecnologias Utilizadas
+
+- React 18+
+- React Router DOM (para rotas)
+- Vite (ferramenta de build e dev server)
+- Axios (para comunicação HTTP com a API)
+- Context API + Hooks (para estado e autenticação)
+- Docker (opcional, para containerizar o ambiente de desenvolvimento)
+
+---
+
+## Estrutura do Projeto
+
+- `src/pages` — Páginas principais da aplicação, como Login, Validate e Dashboard
+- `src/components` — Componentes reutilizáveis da interface
+- `src/hooks` — Hooks personalizados, ex: autenticação
+- `src/services` — Serviços para chamada da API (ex: envio do email, validação do token)
+- `src/routes` — Definição das rotas públicas e privadas
+
+---
+
+## Como Rodar o Projeto
+
+### Pré-requisitos
+
+- Node.js e npm instalados (pode usar Docker para ambiente isolado)
+- Backend API MagicLinkAuth rodando e acessível (ex: http://localhost:5209)
+
+### Instalação
+
+```bash
+npm install
